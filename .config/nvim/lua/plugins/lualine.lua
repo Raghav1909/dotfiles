@@ -1,6 +1,8 @@
 local config = function()
 	-- Load the lualine theme
 	local theme = require("lualine.themes.auto")
+	local ayu_dark_theme = require("lualine.themes.ayu_dark")
+	local oxocarbon_theme = require("lualine.themes.oxocarbon")
 
 	-- Function to safely set background transparency
 	-- local function set_bg_transparent(mode)
@@ -18,7 +20,7 @@ local config = function()
 
 	require("lualine").setup({
 		options = {
-			theme = theme,
+			theme = oxocarbon_theme,
 			globalstatus = true,
 		},
 		sections = {
