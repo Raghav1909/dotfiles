@@ -90,7 +90,7 @@ return {
 				ensure_installed = {
 					"efm",
 					"bashls",
-					"tsserver",
+					"ts_ls",
 					"tailwindcss",
 					"pyright",
 					"html",

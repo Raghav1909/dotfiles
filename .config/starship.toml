@@ -96,7 +96,7 @@ format = '[ $symbol ($version) ]($style)'
 
 [docker_context]
 symbol = " "
-style = "bg:#42BE65"
+style = "bg:#06969A"
 format = '[ $symbol $context ]($style)'
 
 [elixir]
@@ -155,7 +155,7 @@ format = '[ $symbol ($version) ]($style)'
 [python]
 symbol = "🐍"
 style = "bg:#82CFFF"
-format = '[ $symbol ($version) ($virtualenv) ]($style)'
+format = '[ $symbol ($version) (\($virtualenv\)) ]($style)'
 
 [rust]
 symbol = ""
