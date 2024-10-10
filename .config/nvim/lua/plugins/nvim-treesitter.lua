@@ -1,17 +1,17 @@
 local config = function()
-  require("nvim-treesitter.configs").setup({
-    indent = {
-      enable = true,
-    },
-    autotag = {
-      enable = true,
-    },
-    ensure_installed = {
-      "markdown",
-      "json",
-      "javascript",
-      "typescript",
-      "yaml",
+	require("nvim-treesitter.configs").setup({
+		indent = {
+			enable = true,
+		},
+		autotag = {
+			enable = true,
+		},
+		ensure_installed = {
+			"markdown",
+			"json",
+			"javascript",
+			"typescript",
+			"yaml",
 			"html",
 			"css",
 			"markdown",
@@ -22,17 +22,17 @@ local config = function()
 			"gitignore",
 			"python",
 			"go",
-    },
-    auto_install = true,
+		},
+		auto_install = true,
 		highlight = {
 			enable = true,
 			additional_vim_regex_highlighting = true,
 		},
-  })
+	})
 end
 
 return {
 	"nvim-treesitter/nvim-treesitter",
-  lazy = false,
-  config = config
+	lazy = false,
+	config = config,
 }

@@ -31,8 +31,8 @@ local config = function()
 				additional_args = function(_)
 					return { "--hidden", "--no-ignore-vcs" }
 				end,
-        theme = "dropdown",
-        previewer = false,
+				theme = "dropdown",
+				previewer = false,
 				hidden = true,
 				no_ignore = true,
 			},
@@ -41,15 +41,15 @@ local config = function()
 				additional_args = function(_)
 					return { "--hidden", "--no-ignore-vcs" }
 				end,
-        theme = "dropdown",
-        previewer = false,
+				theme = "dropdown",
+				previewer = false,
 				no_ignore = true,
 				hidden = true,
 			},
-      find_buffers = {
-        theme = "dropdown",
-        previewer = false,
-      }
+			find_buffers = {
+				theme = "dropdown",
+				previewer = false,
+			},
 		},
 	})
 end

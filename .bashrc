@@ -31,3 +31,11 @@ eval "$(starship init bash)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
+
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.1.12297006
+export PATH="$PATH:$ANDROID_HOME/cmake/3.30.3/bin"
+
