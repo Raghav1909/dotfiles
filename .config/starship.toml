@@ -94,6 +94,11 @@ symbol = " "
 style = "bg:#82CFFF"
 format = '[ $symbol ($version) ]($style)'
 
+[conda]
+symbol = "🐍"
+style = "bg:#82CFFF"
+format = '[ $symbol ${environment} ]($style)'
+
 [docker_context]
 symbol = " "
 style = "bg:#06969A"

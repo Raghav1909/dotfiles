@@ -27,7 +27,7 @@ local config = function()
 		},
 		pickers = {
 			live_grep = {
-				file_ignore_patterns = { "node_modules", ".venv", "venv" },
+				file_ignore_patterns = { "node_modules", ".venv", "venv", "build" },
 				additional_args = function(_)
 					return { "--hidden", "--no-ignore-vcs" }
 				end,
@@ -37,7 +37,7 @@ local config = function()
 				no_ignore = true,
 			},
 			find_files = {
-				file_ignore_patterns = { "node_modules", ".venv", "venv" },
+				file_ignore_patterns = { "node_modules", ".venv", "venv", "build" },
 				additional_args = function(_)
 					return { "--hidden", "--no-ignore-vcs" }
 				end,

@@ -3,7 +3,7 @@ local config = {}
 
 -- Set preferred font
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 11
+config.font_size = 12
 
 -- Enable Wayland
 config.enable_wayland = true
@@ -26,11 +26,19 @@ config.keys = {
 	},
 }
 
+-- -- Maximize window on startup
+-- wezterm.on("gui-startup", function()
+-- 	local mux = wezterm.mux
+-- 	local tab, pane, window = mux.spawn_window({})
+-- 	window:gui_window():maximize()
+-- end)
+
 -- Maximize window on startup
 wezterm.on("gui-startup", function()
 	local mux = wezterm.mux
-	local tab, pane, window = mux.spawn_window({})
-	window:gui_window():maximize()
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	local gui_window = window:gui_window()
+	gui_window:perform_action(wezterm.action.ToggleFullScreen, pane)
 end)
 
 -- Set the path to your background image
