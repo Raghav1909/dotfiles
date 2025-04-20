@@ -43,6 +43,7 @@ end)
 
 -- Set the path to your background image
 config.window_background_image = wezterm.home_dir .. "/.config/wezterm/assets/house_md_wallpaper.jpg"
+-- config.window_background_image = wezterm.home_dir .. "/.config/wezterm/assets/dark_forest.jpg"
 
 -- Set the background image opacity (0.0 - fully transparent, 1.0 - fully opaque)
 config.window_background_opacity = 1.0

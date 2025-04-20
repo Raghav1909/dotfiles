@@ -4,10 +4,8 @@ local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
 
--- Function to get filename without extension and convert to PascalCase
 local function get_component_name()
-	local filename = vim.fn.expand("%:t:r") -- Get filename without extension
-	-- Convert to PascalCase (assuming filename is in kebab-case or snake_case)
+	local filename = vim.fn.expand("%:t:r")
 	local pascal_case = filename:gsub("[%-_](%w)", function(c)
 		return c:upper()
 	end)
@@ -17,18 +15,16 @@ end
 
 return {
 	s("rfc", {
-		t({ "interface Props {", "  " }),
-		i(1, "// props"),
-		t({ "", "}", "", "const " }),
+		t({ "const " }),
 		f(function()
 			return get_component_name()
 		end, {}),
-		t({ " = (props: Props) => {", "  return (", "    " }),
-		i(3, "<div>"),
-		t({ "", "      " }),
-		i(4, ""),
+		t({ " = () => {", "  return (", "    " }),
+		i(2, "<div>"),
 		t({ "", "    " }),
-		i(5, "</div>"),
+		i(3, ""),
+		t({ "", "    " }),
+		i(4, "</div>"),
 		t({ "", "  )", "}", "", "export default " }),
 		f(function()
 			return get_component_name()
@@ -40,10 +36,8 @@ return {
 		i(1, "state"),
 		t({ ", set" }),
 		i(2, "State"),
-		t({ "] = useState<" }),
-		i(3, "type"),
-		t({ ">(" }),
-		i(4, "initialState"),
+		t({ "] = useState(" }),
+		i(3, "initialState"),
 		t({ ")" }),
 	}),
 
@@ -53,15 +47,5 @@ return {
 		t({ "", "}, [" }),
 		i(2, ""),
 		t({ "])" }),
-	}),
-
-	s("onc", {
-		t({ "const " }),
-		i(1, "handleClick"),
-		t({ " = (event: React.MouseEvent<" }),
-		i(2, "HTMLButtonElement"),
-		t({ ", MouseEvent>) => {", "  " }),
-		i(3, ""),
-		t({ "", "}" }),
 	}),
 }

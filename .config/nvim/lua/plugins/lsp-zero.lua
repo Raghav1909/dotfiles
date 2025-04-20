@@ -16,8 +16,8 @@ return {
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
-			{ "L3MON4D3/LuaSnip" },
-			{ "mlaursen/vim-react-snippets" },
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -25,6 +25,7 @@ return {
 			cmp.setup({
 				sources = {
 					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -41,7 +42,8 @@ return {
 				-- Enable luasnip to handle snippet expansion for nvim-cmp
 				snippet = {
 					expand = function(args)
-						vim.snippet.expand(args.body)
+						-- vim.snippet.expand(args.body)
+						luasnip.lsp_extend(args.body)
 					end,
 				},
 			})
